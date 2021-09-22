@@ -7,9 +7,9 @@ undefined
 ## Table of Contents
 * [Installation](#installation)
 * [Motivation](#motivation)
-* [Built With](#Built With)
+* [Built With](#BuiltWith)
 * [Contributing](#contributing)
-* [Step by Step](#Step by Step)
+* [Step by Step](#StepbyStep)
 * [License](#license)
 * [Questions](#questions)
 
@@ -32,7 +32,7 @@ undefined
 ### This app is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
 ##Questions
-* GitHub: [conleyannmarie](https://github.com/conleyannmarie)
+* GitHub: [conleyannemarie](https://github.com/conleyannemarie)
 * Email: 
 [undefined](mailto:undefined)
   
