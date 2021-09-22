@@ -105,6 +105,32 @@ const promptUser = () => {
       }
     },
   },
+  {
+    type: "input",
+    name: "Email",
+    message: "What is your Email?",
+    //validate property
+    validate: (value) => {
+      if (value) {
+        return true;
+      } else {
+        return "I need a value to continue";
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "github",
+    message: "What is your github username?",
+    //validate property
+    validate: (value) => {
+      if (value) {
+        return true;
+      } else {
+        return "I need a value to continue";
+      }
+    },
+  }
 ]);
 }
 

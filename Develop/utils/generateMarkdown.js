@@ -1,4 +1,4 @@
-const generateMarkDown = data => {
+const generateMarkdown = data => {
   let licenseLink = '';
   
   switch(data.license) {
@@ -27,31 +27,32 @@ const generateMarkDown = data => {
 ${data.description}
 ## Table of Contents
 * [Installation](#installation)
-* [Usage](#usage)
-* [Tests](#tests)
+* [Motivation](#motivation)
+* [Built With](#Built With)
 * [Contributing](#contributing)
+* [Step by Step](#Step by Step)
 * [License](#license)
 * [Questions](#questions)
 
-## Installation
+##Installation
 ${data.installation}
 
-## Motivation
+##Motivation
 ${data.motivation}
 
-## Built With
+##Built With
 ${data.builtwith}
 
-## Contributing
+##Contributing
 ${data.contributing}
 
-## Step by Step
+##Step by Step
 ${data.stepbystep}
 
-## License
+##License
 ### This app is licensed under the [${data.license}](${licenseLink}) license.
 
-## Questions
+##Questions
 * GitHub: [${data.github}](https://github.com/${data.github})
 * Email: 
 [${data.email}](mailto:${data.email})

@@ -5,6 +5,7 @@
 Created an application that when its run, prints a professional ReadMe
 
 ##Demo
+(https://watch.screencastify.com/v/k9cikLKnvFF56vB0iCBd)
 
 ##Installation
 Needs node.js to run and needs npm to install the inquirer package and fs
