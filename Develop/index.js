@@ -1,48 +1,124 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
-const path = require("path");
-const generateMarkDown = require("./utils/generateMarkdown");
+//node modules
+const inquirer = require("inquirer");
+const fs = require("fs");
+const util = require('util');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+const writeFileSync = util.promisify(fs.writeFile)
 
-// TODO: Create an array of questions for user input
-const questions = [{
-    type: 'input',
-    name: 'name',
-    message: "what is your project name?"
-},{
-    type: 'input',
-    name: 'project',
-    message: "what does your project do?"
-},{
-    type: 'input',
-    name: 'project2',
-    message: "What was the motivation behind this project?"
-},{
-    type: 'input',
-    name: 'utilities',
-    message: "What ?"
-},{
-    type: 'input',
-    name: 'github',
-    message: "what is your github username?"
-},{
-    type: 'list',
-    name: 'license',
+// inquirer to generate questions
+const promptUser = () => {
+  return inquirer.prompt([
+  //name of project
+  {
+    type: "input",
+    name: "Name",
+    message: "what is your project name?",
+    //validate property
+    validate: (value) => {
+      if (value) {
+        return true;
+      } else {
+        return "I need a value to continue";
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "Installation",
+    message: "How do you install your app?",
+    
+  },
+  {
+    type: "input",
+    name: "Description",
+    message: "what does your project do?",
+    //validate property
+    validate: (value) => {
+      if (value) {
+        return true;
+      } else {
+        return "I need a value to continue";
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "Projectmotivation",
+    message: "What was the motivation behind this project?",
+  },
+  {
+    type: "input",
+    name: "Builtwith",
+    message: "What is your project built with?",
+    //validate property
+    validate: (value) => {
+      if (value) {
+        return true;
+      } else {
+        return "I need a value to continue";
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "Contributing",
+    message: "What are your contributing Guidelines?",
+    //validate property
+    validate: (value) => {
+      if (value) {
+        return true;
+      } else {
+        return "I need a value to continue";
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "StepbyStep",
+    message: "What are the step by step to use your project?",
+    //validate property
+    validate: (value) => {
+      if (value) {
+        return true;
+      } else {
+        return "I need a value to continue";
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "API",
+    message: "Enter API you used if applicable",
+  },
+  {
+    //list of license
+    type: "list",
+    name: "license",
     message: "what is your license?",
-    choices: ["MIT","APACHE 2.0", 'GPL 3.0', 'BSD 3']
-}];
-// Name of project
-//Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-//what the project does
-// Motivation behind project/Why this project exists
-// What isit built with
-//step by step how to
+    choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "N/A"],
+    //validate property
+    validate: (value) => {
+      if (value) {
+        return true;
+      } else {
+        return "I need a value to continue";
+      }
+    },
+  },
+]);
+}
+
 //if api applicable goes here
 //screenshots
-//contributing guideline
-//license
+//able of Contents, Installation, Usage, License, Contributing, Tests,
+// Function to intialize the app
 
+const init = () => {
+  promptUser()
+    .then((answers) => writeFileSync('./output/README.md', generateMarkdown(answers)))
+    .then(() => console.log('Successfully wrote to README.md'))
+    .catch((err) => console.error(err));
+};
 
-inquirer.prompt(questions).then((answers) => {
-    console.log(answers);
-    fs.writeFileSync(path.join(__dirname,'/output/README.md'),generateMarkDown(answers),'utf8');
-});
+// Function call to initialize app
+init()
