@@ -1,53 +1,61 @@
-const generateMarkdown = data => {
-  let licenseLink = '';
-  
-  switch(data.license) {
-    case 'MIT': licenseLink = 'https://opensource.org/licenses/MIT';
-    break;
+const generateMarkdown = (data) => {
 
-    case 'APACHE 2.0': licenseLink = 'https://www.apache.org/licenses/LICENSE-2.0';
-    break;
+  console.log("data", data);
 
-    case 'GPL 3.0': licenseLink = 'https://www.gnu.org/licenses/gpl-3.0.en.html';
-    break;
+  let licenseLink = "";
 
-    case 'BSD3': licenseLink = 'https://opensource.org/licenses/BSD-3-Clause';
-    break;
+  switch (data.license) {
+    case "MIT":
+      licenseLink = "https://opensource.org/licenses/MIT";
+      break;
 
-    default: licenseLink = 'This app has no license.'
+    case "APACHE 2.0":
+      licenseLink = "https://www.apache.org/licenses/LICENSE-2.0";
+      break;
+
+    case "GPL 3.0":
+      licenseLink = "https://www.gnu.org/licenses/gpl-3.0.en.html";
+      break;
+
+    case "BSD3":
+      licenseLink = "https://opensource.org/licenses/BSD-3-Clause";
+      break;
+
+    default:
+      licenseLink = "This app has no license.";
   }
 
-//The beginning of the markdown document creation
+  //The beginning of the markdown document creation
   //The beginning of the markdown document creation
   return `
 [![Generic badge](https://img.shields.io/badge/license-${data.license}-<COLOR>.svg)](#license)
-# ${data.name}
+# ${data.Name}
 
 ## Description
-${data.description}
+${data.Description}
 ## Table of Contents
 * [Installation](#installation)
 * [Motivation](#motivation)
-* [Built With](#Built With)
+* [Built With](#BuiltWith)
 * [Contributing](#contributing)
-* [Step by Step](#Step by Step)
+* [Step by Step](#StepbyStep)
 * [License](#license)
 * [Questions](#questions)
 
 ##Installation
-${data.installation}
+${data.Installation}
 
 ##Motivation
-${data.motivation}
+${data.Projectmotivation}
 
 ##Built With
-${data.builtwith}
+${data.Builtwith}
 
 ##Contributing
-${data.contributing}
+${data.Contributing}
 
 ##Step by Step
-${data.stepbystep}
+${data.StepbyStep}
 
 ##License
 ### This app is licensed under the [${data.license}](${licenseLink}) license.
@@ -55,11 +63,8 @@ ${data.stepbystep}
 ##Questions
 * GitHub: [${data.github}](https://github.com/${data.github})
 * Email: 
-[${data.email}](mailto:${data.email})
-  `
-}
+[${data.Email}](mailto:${data.Email})
+  `;
+};
 
 module.exports = generateMarkdown;
-
-
-

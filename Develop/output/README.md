@@ -1,9 +1,9 @@
 
-[![Generic badge](https://img.shields.io/badge/license-MIT-<COLOR>.svg)](#license)
-# undefined
+[![Generic badge](https://img.shields.io/badge/license-GPL 3.0-<COLOR>.svg)](#license)
+# Conley's Project
 
 ## Description
-undefined
+creates a professional readme
 ## Table of Contents
 * [Installation](#installation)
 * [Motivation](#motivation)
@@ -14,25 +14,25 @@ undefined
 * [Questions](#questions)
 
 ##Installation
-undefined
+run node index.js
 
 ##Motivation
-undefined
+to help people create a professional readme in a quick and timely matter
 
 ##Built With
-undefined
+node and javascript
 
 ##Contributing
-undefined
+anyone can contribute
 
 ##Step by Step
-undefined
+type node index.js and then follow the given prompts
 
 ##License
-### This app is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+### This app is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
 
 ##Questions
-* GitHub: [conleyannemarie](https://github.com/conleyannemarie)
+* GitHub: [conleyannmarie](https://github.com/conleyannmarie)
 * Email: 
-[undefined](mailto:undefined)
+[conley.morris@gmail.com](mailto:conley.morris@gmail.com)
   
